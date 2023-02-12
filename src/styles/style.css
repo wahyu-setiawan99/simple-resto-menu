@@ -11,7 +11,6 @@ h3 {
 
 /* header */
 .header__container {
-  background-color: #79DCF1;
   display: flex;
   flex-direction: row;
   padding: 24px;
@@ -42,14 +41,33 @@ h3 {
 
 
 /* menu list container */
+.search-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+}
+
+.search-menu input {
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  width: 30%;
+}
+
+.search-menu button {
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
 .menu__container {
   padding: 24px;
   display: grid;
   min-height: 100hv;
   grid-template-columns: repeat(4, minmax(0, 1fr) );
   grid-template-rows: minmax(min-content, max-content);
-  gap: 12px;
-
+  gap: 18px;
 }
  /* end of menu list container */
 
@@ -57,21 +75,20 @@ h3 {
 
 
  /* menu item */
- .menu__item {
+ .menu-item {
   margin-bottom: 18px;
   padding: 12px;
   display: flex;
   flex-direction: column;
-  background-color: #F5EA5A;
  }
  
- .menu__image img {
+ .menu-item__header img {
   height: 40vh;
   width: 100%;
   border-radius: 8px;
  }
 
- .menu__title {
+ .menu-item__header h3 {
   margin: 6px 0;
   max-width: 100%;
   display: inline-block;
@@ -80,26 +97,30 @@ h3 {
   text-overflow: ellipsis;
  }
 
+ .menu-item__header a {
+  text-decoration: none;
+  color: red;
+ }
 
- .menu__preview {
+
+ .menu-item__content {
   height: 100px;
   margin: 6px 0;
   font-size: 17px;
  }
 
- .menu__preview p {
+ .menu-item__content p {
   display: -webkit-box;
   overflow: hidden;
    text-overflow: ellipsis;
-   -webkit-line-clamp: 3;
-           line-clamp: 3; 
+   -webkit-line-clamp: 5;
+           line-clamp: 5; 
    -webkit-box-orient: vertical;
  }
 
  .readmore__button button {
   padding: 8px;
   border-radius: 8px;
-  background-color: #FF78F0 ;
   color: white;
   font-weight: 600;
   border: none;
@@ -110,37 +131,40 @@ h3 {
   text-decoration: none;
  }
 
- .readmore__button button:hover {
-  background-color: #A31ACB;
- }
  /* end of menu item */
 
 
 
 
  /* detail per menu */
-.menuitem__container {
-  display: block;
+.menu-detail__container {
+  display: flex;
+  flex-direction: row;
   padding: 24px 36px;
 }
 
-
-.menuitem__name {
-  margin: 12px 0;  
+.menu-detail__header {
+  margin: 0 18px;
 }
 
-.menuitem__image {
-  width: 50%;
-  margin: 12px 0;
+.menu-detail__header img {
+  max-width: 600px;
+  max-height: 500px;
+  border-radius: 18px;
 }
 
-.menuitem__image img {
-  width: 100%;
-  max-height: 400px;
+.menu-detail__instructions {
+  max-width: 600px ;
 }
 
-.recipe_container ol li {
-  line-height: 1.5;
+.menu-detail__instructions h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+
+.menu-detail__instructions p{
+  line-height: 1.6;
+  font-size: 18px;
 }
 
  /* end of detail per menu */
@@ -152,7 +176,6 @@ h3 {
  /* footer */
  .footer__container {
   padding: 32px;
-  background-color: #FF78F0;
   text-align: center;
   font-size: 18px;
   font-weight: 500;
@@ -167,8 +190,12 @@ h3 {
   .menu__container {
     padding: 16px;
     grid-template-columns: repeat(3, minmax(0, 1fr) );
-    gap: 8px;
+    gap: 12px;
   
+  }
+
+  .menu-detail__container {
+    flex-direction: column;
   }
 
   
@@ -195,6 +222,10 @@ h3 {
   .menu__container {
     grid-template-columns: repeat(1, minmax(0, 1fr) );
   
+  }
+
+  .search-menu input {
+    width: 50%;
   }
 
  }
